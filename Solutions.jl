@@ -251,6 +251,25 @@ begin
 	solution1
 end
 
+# ╔═╡ 26c1523e-3425-11eb-1732-a184c3dd5778
+md"###### A better solution. 
+This one should run in O(n) time compared to O(n²) above" 
+
+# ╔═╡ 0e79ba04-3425-11eb-11cf-9dec74fb0c35
+begin
+	solution1_1 = 0
+	cache = Dict()
+	for item in data
+		pair = 2020-item
+		if get(cache, pair, 0) == 1
+			solution1_1 = item * pair
+			break
+		end
+		cache[item] = 1
+	end
+	solution1_1
+end
+
 # ╔═╡ 8ef1a46a-33eb-11eb-10a6-a9dc2c2c98f9
 md"""
 ### Question 2
@@ -273,10 +292,34 @@ begin
 	solution2
 end
 
+# ╔═╡ 3c77d628-3427-11eb-2f21-f5afccb77b7e
+md"###### A better solution. 
+This one should run in O(n²) time compared to O(n³) above"
+
+# ╔═╡ 584f8ee0-3427-11eb-26e5-ad9a5adbcbba
+begin
+	solution2_1 = 0
+	cache2 = Dict()
+	for item1 in data, item2 in data
+		triplet = 2020-item1-item2
+		if get(cache, triplet, 0) == 1
+			solution2_1 = item1 * item2 * triplet
+			break
+		end
+		cache[item1] = 1
+		cache[item2] = 1
+	end
+	solution2_1
+end
+
 # ╔═╡ Cell order:
 # ╟─cd079d24-33e9-11eb-2657-b5d8b026582a
 # ╟─372ffe08-33ea-11eb-2124-85a9b6123282
 # ╟─702776fc-33e8-11eb-1400-c993105ccf6a
 # ╠═7667c5dc-33eb-11eb-1c06-1dbefd10b08a
+# ╟─26c1523e-3425-11eb-1732-a184c3dd5778
+# ╠═0e79ba04-3425-11eb-11cf-9dec74fb0c35
 # ╟─8ef1a46a-33eb-11eb-10a6-a9dc2c2c98f9
 # ╠═7d61e118-33e8-11eb-0c06-dd1c84aad4d5
+# ╟─3c77d628-3427-11eb-2f21-f5afccb77b7e
+# ╠═584f8ee0-3427-11eb-26e5-ad9a5adbcbba
