@@ -964,7 +964,7 @@ md"""
 
 # ╔═╡ 5c108cee-3785-11eb-0c17-5d0c188e8f04
 begin
-	sum(map(x->length(union(Set.(x)[:]...)),split.(split(read("Day6.txt",String),"\n\n"),"\n")))
+	sum(map(x->length(∪(Set.(x)[:]...)),split.(split(read("Day6.txt",String),"\n\n"),"\n")))
 end
 
 # ╔═╡ b16f496a-3784-11eb-3e07-a9e7a3f14f5d
@@ -1039,7 +1039,7 @@ md"""
 """
 
 # ╔═╡ 4d814a22-3782-11eb-1740-3d8b944f64a3
-sum(map(x->length(intersect(Set.(x)[:]...)),split.(split(read("Day6.txt",String),"\n\n"),"\n")))
+sum(map(x->length(∩(Set.(x)[:]...)),split.(split(read("Day6.txt",String),"\n\n"),"\n")))
 
 # ╔═╡ Cell order:
 # ╟─cd079d24-33e9-11eb-2657-b5d8b026582a
